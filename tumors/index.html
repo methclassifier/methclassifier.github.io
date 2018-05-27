@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="./src/img/classifier_avatar.png">
 
-    <title>Template for DNA Methylation Classifier</title>
+    <title>DNA Methylation Classifier - tumors</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./src/bootstrap.min.css" rel="stylesheet">
@@ -22,13 +22,13 @@
     <div class="container">
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-          </div>
-          <div class="col-4 text-center">
+          <div class="col-8 text-center">
             <a class="blog-header-logo text-dark" href="/">DNA Methylation Classifier</a>
           </div>
+          <div class="col-0 pt-1">
+          </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
-            <a class="btn btn-sm btn-outline-secondary" href="/sign_in/">Sign up / Sign in</a>
+            <a class="btn btn-sm btn-outline-secondary" href="/sign_in/">Sign up/ in</a>
           </div>
         </div>
       </header>
@@ -39,7 +39,6 @@
           <a class="p-2 text-muted" href="/classifier">Classifier</a>
           <a class="p-2 text-muted" href="/upload">Upload sample</a>
           <a class="p-2 text-muted" href="/tumors">Tumors</a>
-          <a class="p-2 text-muted" href="/about">About</a>
           <a class="p-2 text-muted" href="/contact">Contact</a>
           <a class="p-2 text-muted" href="/legal_notice">Legal notice</a>
         </nav>
@@ -49,11 +48,107 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <h3 class="pb-3 mb-4 font-italic border-bottom">
-            Instruction
+            Tumors
           </h3>
 
           <div class="blog-post">
-            <p>To implement the DNA methylation classifier you are required to generate and upload treated Illumina Human Methylation 27 BeadChip arrays or higher arrays(e.g. <a href="/src/input_example/jhu-usc.edu_BRCA.HumanMethylation27.2.lvl-3.TCGA-A8-A08S-10A-11D-A032-05.gdc_hg38.txt">input_example.txt</a>) of your tumors of interest. This data is then automatically compared to methylation data of a reference cohort comprising over 17 tumors. Within minutes you will receive a report of the methylation profiling of your case.</p>
+            <p>The following 17 types of tumors form the reference cohort, to which your input data will automatically compared. Of note, you will get <i><b>Normal</b></i> classification results, if your input data looks more like from a normal tissue than a tumor tissue. And if your input data is not in the reference cohort, final classification results <b>will</b> be presented. However, the diagram will notice you the not-in-cohort possible.</p>
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Tumor Name</th>
+                  <th>Abbreviation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</th>
+                  <td>Breast Invasive Carcinoma</th>
+                  <td>BRCA</th>
+                </tr>
+                <tr>
+                  <td>2</th>
+                  <td>Kidney Renal Clear Cell Carcinoma</th>
+                  <td>KIRC</th>
+                </tr>
+                <tr>
+                  <td>3</th>
+                  <td>Ovarian Serous Cystadenocarcinoma</th>
+                  <td>OV</th>
+                </tr>
+                <tr>
+                  <td>4</th>
+                  <td>Lung Adenocarcinoma</th>
+                  <td>LUAD</th>
+                </tr>
+                <tr>
+                  <td>5</th>
+                  <td>Uterine Corpus Endometrial Carcinoma</th>
+                  <td>UCEC</th>
+                </tr>
+                <tr>
+                  <td>6</th>
+                  <td>Head and Neck Squamous Cell Carcinoma</th>
+                  <td>HNSC</th>
+                </tr>
+                <tr>
+                  <td>7</th>
+                  <td>Brain Lower Grade Glioma</th>
+                  <td>LGG</th>
+                </tr>
+                <tr>
+                  <td>8</th>
+                  <td>Thyroid Carcinoma</th>
+                  <td>THCA</th>
+                </tr>
+                <tr>
+                  <td>9</th>
+                  <td>Lung Squamous Cell Carcinoma</th>
+                  <td>LUSC</th>
+                </tr>
+                <tr>
+                  <td>10</th>
+                  <td>Prostate Adenocarcinoma</th>
+                  <td>PRAD</th>
+                </tr>
+                <tr>
+                  <td>11</th>
+                  <td>Skin Cutaneous Melanoma</th>
+                  <td>SKCM</th>
+                </tr>
+                <tr>
+                  <td>12</th>
+                  <td>Colon Adenocarcinoma</th>
+                  <td>COAD</th>
+                </tr>
+                <tr>
+                  <td>13</th>
+                  <td>Stomach Adenocarcinoma</th>
+                  <td>STAD</th>
+                </tr>
+                <tr>
+                  <td>14</th>
+                  <td>Glioblastoma Multiforme</th>
+                  <td>GBM</th>
+                </tr>
+                <tr>
+                  <td>15</th>
+                  <td>Bladder Urothelial Carcinoma</th>
+                  <td>BLCA</th>
+                </tr>
+                <tr>
+                  <td>16</th>
+                  <td>Liver Hepatocellular Carcinoma</th>
+                  <td>LIHC</th>
+                </tr>
+                <tr>
+                  <td>17</th>
+                  <td>Cervical Squamous Cell Carcinoma and Endocervical Adenocarcinoma</th>
+                  <td>CESC</th>
+                </tr>
+              </tbody>
+            </table>
           </div><!-- /.blog-post -->
 
           <nav class="blog-pagination">
@@ -63,7 +158,7 @@
 
         <aside class="col-md-4 blog-sidebar">
           <div class="p-3 mb-3 bg-light rounded">
-            <h4 class="font-italic">Importance Notice</h4>
+            <h4 class="font-italic">Important Notice</h4>
             <p class="mb-0">Classification using methylation profiling is a research tool under development, it is not verified and has not been clinically validated. Implementation of the results in a clinical setting is in the sole responsibility of the treating physician.</p>
           </div>
 
@@ -83,7 +178,13 @@
             <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-8"><a href="http://scit.bjtu.edu.cn/cms/">School of Computer and Information Technology</a></div>
-            </div>      
+            </div>
+            <br />
+            <div class="row">
+              <img src="./src/img/pku.png" data-holder-rendered="true" style="width: 100px; height: 100px;">
+              <div class="col-sm-1"></div>
+              <img src="./src/img/bjtu.png" data-holder-rendered="true" style="width: 100px; height: 100px;">
+            </div>
           </div>
         </aside><!-- /.blog-sidebar -->
 
