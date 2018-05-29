@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="./src/img/classifier_avatar.png">
 
-    <title>Template for DNA Methylation Classifier</title>
+    <title>DNA Methylation Classifier - upload</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./src/bootstrap.min.css" rel="stylesheet">
@@ -22,13 +22,13 @@
     <div class="container">
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
-          <div class="col-4 pt-1">
-          </div>
-          <div class="col-4 text-center">
+          <div class="col-8 text-center">
             <a class="blog-header-logo text-dark" href="/">DNA Methylation Classifier</a>
           </div>
+          <div class="col-0 pt-1">
+          </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
-            <a class="btn btn-sm btn-outline-secondary" href="/sign_in/">Sign up / Sign in</a>
+            <a class="btn btn-sm btn-outline-secondary" href="/sign_in/">Sign up/ in</a>
           </div>
         </div>
       </header>
@@ -39,7 +39,6 @@
           <a class="p-2 text-muted" href="/classifier">Classifier</a>
           <a class="p-2 text-muted" href="/upload">Upload sample</a>
           <a class="p-2 text-muted" href="/tumors">Tumors</a>
-          <a class="p-2 text-muted" href="/about">About</a>
           <a class="p-2 text-muted" href="/contact">Contact</a>
           <a class="p-2 text-muted" href="/legal_notice">Legal notice</a>
         </nav>
@@ -49,11 +48,80 @@
       <div class="row">
         <div class="col-md-8 blog-main">
           <h3 class="pb-3 mb-4 font-italic border-bottom">
-            Instruction
+            Upload
           </h3>
 
           <div class="blog-post">
-            <p>To implement the DNA methylation classifier you are required to generate and upload treated Illumina Human Methylation 27 BeadChip arrays or higher arrays(e.g. <a href="/src/input_example/jhu-usc.edu_BRCA.HumanMethylation27.2.lvl-3.TCGA-A8-A08S-10A-11D-A032-05.gdc_hg38.txt">input_example.txt</a>) of your tumors of interest. This data is then automatically compared to methylation data of a reference cohort comprising over 17 tumors. Within minutes you will receive a report of the methylation profiling of your case.</p>
+            <p>Your thankworthy upload is appreciated. There are still few points you need to notice:</p>
+            <ul>
+              <li>Uploaded data format must be txt.</li>
+              <li>Content of uploaded data must follow the style of input data used in Classifier part(e.g. <a href="../src/input_example/meth_input_example.txt">inputdata_example.txt</a>).</li>
+              <li>Information of tumors' specific types are needed.</li>
+            </ul>
+            <p>Again, thanks for upload!</p>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="uploadData">Upload data</label>
+                    <form id="upload-form" action="upload.php" method="post" enctype="multipart/form-data" >
+                      <input type="file" id="upload" name="upload" /> <br />
+                      <input type="submit" value="Upload" />
+                    </form>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="type">Type of tumor</label>
+                    <select class="custom-select d-block w-100" id="type" required>
+                      <option value="">Choose...</option>
+                      <option>BLCA</option>
+                      <option>BRCA</option>
+                      <option>CESC</option>
+                      <option>COAD</option>
+                      <option>GBM</option>
+                      <option>HNSC</option>
+                      <option>KIRC</option>
+                      <option>LGG</option>
+                      <option>LIHC</option>
+                      <option>LUAD</option>
+                      <option>LUSC</option>
+                      <option>OV</option>
+                      <option>PRAD</option>
+                      <option>SKCM</option>
+                      <option>STAD</option>
+                      <option>THCA</option>
+                      <option>UCEC</option>
+                    </select>
+                  </div>
+                </div>
+    
+                <div class="mb-3">
+                  <label for="username">Username</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="username" placeholder="Username" required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                      Your username is required.
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="mb-3">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+
+                <hr class="mb-4">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="save-info">
+                  <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+              </form>
           </div><!-- /.blog-post -->
 
           <nav class="blog-pagination">
@@ -83,7 +151,13 @@
             <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-8"><a href="http://scit.bjtu.edu.cn/cms/">School of Computer and Information Technology</a></div>
-            </div>      
+            </div>
+            <br />
+            <div class="row">
+              <img src="./src/img/pku.png" data-holder-rendered="true" style="width: 100px; height: 100px;">
+              <div class="col-sm-1"></div>
+              <img src="./src/img/bjtu.png" data-holder-rendered="true" style="width: 100px; height: 100px;">
+            </div>
           </div>
         </aside><!-- /.blog-sidebar -->
 
