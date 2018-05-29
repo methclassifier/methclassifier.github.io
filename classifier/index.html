@@ -59,7 +59,7 @@
             </form>
             <br/>
             <p>Your input data will automatically compared to <a href="/tumors/">17 types of tumors</a>. Of note, you will get <i><b>Normal</b></i> classification results, if your input data looks more like from a normal tissue than a tumor tissue. And if your input data is not in the reference cohort, final classification results <b>will</b> be presented. However, the diagram will notice you the not-in-cohort possible.</p>
-            <p>See <button class="btn btn-sm btn-outline-primary" onclick="example()">Example</button> here.</p>
+            <p>See <button id='example_diagram' class="btn btn-sm btn-outline-primary" onclick="example()">Example</button> here.</p>
             <div id="diagram"></div>
           </div><!-- /.blog-post -->
 
@@ -122,6 +122,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script>
       function example(){
+      window.document.getElementById('example_diagram').disabled="disabled";
       var d3 = Plotly.d3;
 
       var WIDTH_IN_PERCENT_OF_PARENT = 100,
